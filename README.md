@@ -1,5 +1,7 @@
 # dsh-blackhole
 
+**Read this in:** [English](README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [日本語](README.ja.md)
+
 A geodesic-traced Schwarzschild **black hole floating inside DeepSeek Harness (DSH)** —
 a persistent client plugin for the DSH web surface, ported from
 [s0xDk/ghostty-blackhole](https://github.com/s0xDk/ghostty-blackhole) (Ghostty
