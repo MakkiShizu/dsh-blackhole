@@ -16,16 +16,12 @@ from the ray tracing — nothing is painted on.
   profile, relativistic Doppler shift and beaming (`g = √(1 − 1.5 r_s/r)/(1 − β·k̂)`);
   the far side arcs over and under the shadow (the Interstellar look).
 - **Photon ring** — rays winding near the `1.5 r_s` photon sphere.
-- **Gravitational lensing** — two modes, both optional:
-  - **Lens page** (default): the *real* DOM elements around the hole are warped
-    by per-element CSS transforms (magnified + pulled toward the hole, driven by
-    the same hole math the shader uses, so the warp stays locked to the hole).
-    Transform-only means layout is untouched: no page-wide filter, nothing ever
-    clips or goes black, and scrolling stays fast.
-  - **Sky background** (off by default): a procedural starfield "sky" plane is
-    lensed instead (browsers cannot sample page pixels into WebGL, so this is
-    the original Ghostty-style look; far field uses the analytic weak-field
-    deflection with mild chromatic aberration).
+- **Gravitational lensing** — with the optional **Sky background** on, escaped
+  rays project onto a procedural starfield "sky" plane (browsers cannot sample
+  page pixels into WebGL); the far field uses the analytic weak-field
+  deflection with mild chromatic aberration. With it off (the default) the hole
+  floats directly over the page: shadow, photon ring and accretion disk only,
+  everything around stays transparent.
 - **Gravitational time dilation** — the disk pattern winds down as the hole
   grows heavier.
 
@@ -40,10 +36,8 @@ from the ray tracing — nothing is painted on.
 
 15 disk presets from the upstream tuner + `ghostty-blackhole-main`, follow-pointer
 mode with inertia, and a full settings page (设置 → **Blackhole**) with live
-status (mode / level / FPS / shader errors). Background & lensing options:
-**Sky background** (starfield disc) and **Lens page** (SVG displacement of the
-real content) are independent toggles, plus a lens-strength slider. The bottom
-work area is never covered; all state is in-memory only.
+status (mode / level / FPS / shader errors) and a **Sky background** toggle.
+The bottom work area is never covered; all state is in-memory only.
 
 ## Install (persistent, auto-loads on every `dsh web` start)
 
