@@ -1,6 +1,6 @@
 {
   "name": "dsh-blackhole",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Ghostty blackhole effect as a persistent DSH web client plugin: geodesic-traced Schwarzschild black hole overlay with demo/pomodoro/context/manual modes and 15 presets. Ported from s0xDk/ghostty-blackhole (MIT).",
   "type": "module",
@@ -9,6 +9,10 @@
     ".": "./lib/index.js",
     "./client": "./lib/client.js",
     "./package.json": "./package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MakkiShizu/dsh-blackhole.git"
   },
   "dsh": {
     "client": {

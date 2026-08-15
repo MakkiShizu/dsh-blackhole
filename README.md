@@ -79,7 +79,10 @@ Delete the `blackhole` row from `cordis.patch.yml`, then
 - `lib/index.js` — host half: a no-op `apply` so the host Loader row mounts.
 - `lib/client.js` — the browser bundle: a classic script registering a
   `window.__ModuleLoader__.load({ id, factory })` factory whose exports are the
-  Cordis plugin. It requires only the seeded `react` module.
+  Cordis plugin. It requires only the seeded `react` module and — like every
+  shipped client plugin — declares `inject: ["slots"]`, because the client
+  kernel exposes a service only when the plugin's `inject` lists it
+  (`ctx.get("slots")` is `undefined` otherwise).
 - The plugin registers three slots: `shell.overlay` (fullscreen click-through
   WebGL2 canvas, order −100), `settings.section` (the control panel), and
   `conversation.session.header.utilities` (a null-rendering probe that reads the
