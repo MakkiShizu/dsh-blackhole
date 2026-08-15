@@ -17,10 +17,11 @@ from the ray tracing — nothing is painted on.
   the far side arcs over and under the shadow (the Interstellar look).
 - **Photon ring** — rays winding near the `1.5 r_s` photon sphere.
 - **Gravitational lensing** — two modes, both optional:
-  - **Lens page** (default): the *real* page content is warped around the hole
-    by an SVG `feDisplacementMap` filter over the conversation column (weak-field
-    `1/r` inward bending + Einstein-ring compression; the shadow and disk stay on
-    the WebGL overlay above it).
+  - **Lens page** (default): the *real* DOM elements around the hole are warped
+    by per-element CSS transforms (magnified + pulled toward the hole, driven by
+    the same hole math the shader uses, so the warp stays locked to the hole).
+    Transform-only means layout is untouched: no page-wide filter, nothing ever
+    clips or goes black, and scrolling stays fast.
   - **Sky background** (off by default): a procedural starfield "sky" plane is
     lensed instead (browsers cannot sample page pixels into WebGL, so this is
     the original Ghostty-style look; far field uses the analytic weak-field
