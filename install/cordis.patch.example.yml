@@ -1,0 +1,11 @@
+# Your patch layer for this dsh profile, applied after every bundle layer:
+# a top-level YAML array of loader patch entries (id-targeted config
+# overrides, disables, and insert lists; `!!js` expressions allowed).
+
+# Persistent Ghostty blackhole effect: a WebGL2 client plugin row. The
+# package (packages/dsh-blackhole) is linked into the profile's node_modules;
+# its client half is scanned into window.__DSH_BOOT__ by the modules row, so
+# the overlay loads automatically on every DSH web start.
+- insert:
+    - id: blackhole
+      name: dsh-blackhole
