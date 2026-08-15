@@ -16,9 +16,15 @@ from the ray tracing — nothing is painted on.
   profile, relativistic Doppler shift and beaming (`g = √(1 − 1.5 r_s/r)/(1 − β·k̂)`);
   the far side arcs over and under the shadow (the Interstellar look).
 - **Photon ring** — rays winding near the `1.5 r_s` photon sphere.
-- **Gravitational lensing** — escaped rays project onto a procedural starfield
-  "sky" plane (browsers cannot sample page pixels); far field uses the analytic
-  weak-field deflection with mild chromatic aberration.
+- **Gravitational lensing** — two modes, both optional:
+  - **Lens page** (default): the *real* page content is warped around the hole
+    by an SVG `feDisplacementMap` filter over the conversation column (weak-field
+    `1/r` inward bending + Einstein-ring compression; the shadow and disk stay on
+    the WebGL overlay above it).
+  - **Sky background** (off by default): a procedural starfield "sky" plane is
+    lensed instead (browsers cannot sample page pixels into WebGL, so this is
+    the original Ghostty-style look; far field uses the analytic weak-field
+    deflection with mild chromatic aberration).
 - **Gravitational time dilation** — the disk pattern winds down as the hole
   grows heavier.
 
@@ -33,8 +39,10 @@ from the ray tracing — nothing is painted on.
 
 15 disk presets from the upstream tuner + `ghostty-blackhole-main`, follow-pointer
 mode with inertia, and a full settings page (设置 → **Blackhole**) with live
-status (mode / level / FPS / shader errors). The bottom work area is never
-covered; all state is in-memory only.
+status (mode / level / FPS / shader errors). Background & lensing options:
+**Sky background** (starfield disc) and **Lens page** (SVG displacement of the
+real content) are independent toggles, plus a lens-strength slider. The bottom
+work area is never covered; all state is in-memory only.
 
 ## Install (persistent, auto-loads on every `dsh web` start)
 
