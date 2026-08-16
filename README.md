@@ -37,9 +37,10 @@ from the ray tracing — nothing is painted on.
 | **Manual** | Fixed level 0–100 %. |
 
 15 disk presets from the upstream tuner + `ghostty-blackhole-main`, follow-pointer
-mode with inertia, and a full settings page (设置 → **Blackhole**) with live
-status (mode / level / FPS / shader errors) and a **Sky background** toggle.
-The bottom work area is never covered; all state is in-memory only.
+mode with inertia (position-eased), and a full settings page (设置 → **Blackhole**)
+with live status (mode / level / FPS / shader errors), a **Sky background** toggle
+and independent hole/sky opacity sliders. The bottom work area is never covered;
+all state is in-memory only.
 
 ## Install (persistent, auto-loads on every `dsh web` start)
 
