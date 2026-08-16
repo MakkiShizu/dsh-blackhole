@@ -1,6 +1,10 @@
 # dsh-blackhole
 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 **Read this in:** [English](README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [日本語](README.ja.md)
+
+![dsh-blackhole demo](demo.gif)
 
 A geodesic-traced Schwarzschild **black hole floating inside DeepSeek Harness (DSH)** —
 a persistent client plugin for the DSH web surface, ported from
@@ -36,11 +40,35 @@ from the ray tracing — nothing is painted on.
 | **Context** | DSH-native analog of upstream token mode: no/blank session → no hole; the hole grows with the conversation (`1 − e^(−nodes/70)`), faster and wider-ranging as it fills. |
 | **Manual** | Fixed level 0–100 %. |
 
-15 disk presets from the upstream tuner + `ghostty-blackhole-main`, follow-pointer
-mode with inertia (position-eased), and a full settings page (设置 → **Blackhole**)
-with live status (mode / level / FPS / shader errors), a **Sky background** toggle
-and independent hole/sky opacity sliders. The bottom work area is never covered;
-all state is in-memory only.
+15 disk presets from the upstream tuner + `ghostty-blackhole-main`, rigid-body
+disk spin, follow-pointer with position easing, an **Auto look** mode that
+randomly changes the disk appearance every 5–20 s (random presets or fully
+random parameters, with a smooth transition), and a full settings page
+(设置 → **Blackhole**) with live status (mode / level / FPS / shader errors), a
+**Sky background** toggle, independent hole/sky opacity sliders, and a
+four-language UI (简体中文 / 繁體中文 / 日本語 / English). The bottom 10 % work
+area is never covered; all state is in-memory only.
+
+## Usage
+
+The effect starts automatically with every `dsh web` session — no action needed
+after install. Defaults: **Context** mode (the hole tracks the current
+conversation and hides when the session is blank), sky background off, bottom
+10 % of the page protected.
+
+Open 设置 → **Blackhole** to control it:
+
+- **Mode** — Demo tour (42 s preset showcase) · Pomodoro (55/5 + idle fade) ·
+  Context (conversation size) · Manual (fixed level) · Off.
+- **Preset** — one of 15 disk looks, or enable **Auto look** to rotate them
+  randomly every 5–20 s.
+- **Size & motion** — hole radius, max fill area, lens depth, drift speed,
+  **spin speed** (rigid disk + photon-ring rotation), work area, follow pointer.
+- **Disk** — temperature, gain, opacity, streak contrast, starfield gain,
+  exposure, time-dilation floor.
+- **Background** — the lensed starfield sky (off by default).
+- **Render** — quality (geodesic steps), independent hole/sky opacity.
+- **Language** — 简体中文 / 繁體中文 / 日本語 / English.
 
 ## Install (persistent, auto-loads on every `dsh web` start)
 
